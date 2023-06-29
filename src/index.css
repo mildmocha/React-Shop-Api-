@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Spectral&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', Arial,Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @apply text-slate-900;
+}
+
+#root {
+  @apply w-full;
+}
+

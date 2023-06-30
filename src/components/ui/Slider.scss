@@ -1,0 +1,8 @@
+.slider_wrap{
+  .pc { display: none; }
+
+  @media (min-width: 768px){
+    .pc { display: block; }
+    .mobile { display: none; }
+  }
+}

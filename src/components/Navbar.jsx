@@ -21,8 +21,8 @@ export default function Navbar() {
   
 
   return (
-    <div className='border-b border-slate-300'>
-      <div className='w-full max-w-screen-2xl m-auto'>
+    <div className='fixed w-full z-10 border-b border-slate-300 text-slate-500 hover:text-black hover:bg-white transition duration-500 bg-white bg-opacity-10'>
+    <div className='w-full max-w-screen-2xl m-auto'>
         <header className='flex justify-between items-center p-5'>
           <h1 className='text-xl md:text-3xl font-logoFont tracking-widest'>DCBA<span className='pl-3 md:pl-6'>GFE</span></h1>
 

@@ -6,7 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getDatabase, get, ref, set } from "firebase/database";
+import { getDatabase, get, ref, set, remove} from "firebase/database";
 import uuid from "react-uuid";
 
 const firebaseConfig = {
@@ -71,5 +71,31 @@ export async function getProduct(){
       }
     })
 }
+
+//사용자의 카트에 추가하거나 업데이트
+export async function addOrUpdateToCart(userId,product){
+  return set(ref(database,`carts/${userId}/${product.id}`),product)
+}
+
+//특정 사용자의 카트를 가져옴
+export async function getCart(userId){
+  return get(ref(database, `carts/${userId}`))
+    .then((snapshot) => {
+      const items = snapshot.val() || {};
+        return Object.values(items);    
+    })
+}
+
+
+export async function deleteCartItem (userId,product){
+  try{ await remove(ref(database, `carts/${userId}/${product.id}`));
+ return true;
+} catch (error) {
+  throw new Error();
+} 
+}
+
+
+
 
 

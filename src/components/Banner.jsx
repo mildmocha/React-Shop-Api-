@@ -9,7 +9,7 @@ export default function Banner() {
       </div>
       <div className='absolute w-full top-2/3 text-center'>
         <img className=" w-1/3 m-auto mb-4" src="./images/womens_polo_logo_white.svg" alt="배너안로고" />
-        <p className=" text-white text-5xl font-serif">Foundation</p>
+        <p className=" text-black text-5xl font-serif">Produck</p>
       </div>
     </section>
   )

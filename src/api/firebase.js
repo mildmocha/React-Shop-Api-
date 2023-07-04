@@ -55,13 +55,16 @@ async function adminUser(user) {
 }
 export async function addNewProduct(product, image) {
   const id = uuid();
+  console.log(id)
+  
   return set(ref(database, `products/${id}`), {
     ...product,
     id,
     price: parseInt(product.price),
     options: product.options.split(","),
     image
-  })
+  }
+  )
 }
 export async function getProduct(){
   return get(ref(database, 'products'))
@@ -87,13 +90,11 @@ export async function getCart(userId){
 }
 
 
-export async function deleteCartItem (userId,product){
-  try{ await remove(ref(database, `carts/${userId}/${product.id}`));
- return true;
-} catch (error) {
-  throw new Error();
+export async function deleteCartItem (userId,productId){
+  return remove(ref(database, `carts/${userId}/${productId}`));
+ 
 } 
-}
+
 
 
 

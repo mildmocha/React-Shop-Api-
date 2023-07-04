@@ -30,7 +30,6 @@ export default function Navbar() {
           <nav className='flex items-center gap-4'>
             <Link to='/products'>Product</Link>
             {user && <Link to='/cart'><CartStatus /></Link> }
-
             {user && user.isAdmin && (<Link to='/products/new'><HiPencilAlt /></Link>)}
             {user && <User user={user} />}
             {!user && <Button onClick={login} text={'login'} />}
